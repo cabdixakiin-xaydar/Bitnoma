@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitnoma Tech | Advanced Cybersecurity Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a73e8;
+            --primary-dark: #0d47a1;
+            --secondary: #00c4cc;
+            --dark: #0a192f;
+            --darker: #020c1b;
+            --light: #e6f1ff;
+            --gray: #8892b0;
+            --light-gray: #ccd6f6;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--dark);
+            color: var(--light-gray);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--light);
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--primary);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: rgba(10, 25, 47, 0.9);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            padding: 20px 0;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--light);
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            color: var(--primary);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            font-size: 16px;
+            font-weight: 500;
+            position: relative;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--light);
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            background: linear-gradient(to bottom, var(--darker), var(--dark));
+        }
+        
+        .hero-content {
+            max-width: 800px;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: var(--light);
+        }
+        
+        .hero h1 span {
+            color: var(--primary);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: var(--gray);
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .btn {
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--primary);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+            background-color: var(--darker);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--light);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: rgba(10, 25, 47, 0.7);
+            border-radius: 10px;
+            padding: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(100, 255, 218, 0.1);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border-color: var(--primary);
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--light);
+        }
+        
+        .service-card p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background-color: var(--dark);
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-image {
+            flex: 1;
+            position: relative;
+        }
+        
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--light);
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--gray);
+        }
+        
+        .about-text ul {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+        
+        .about-text ul li {
+            margin-bottom: 10px;
+            color: var(--gray);
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .about-text ul li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+        
+        /* Clients Section */
+        .clients {
+            padding: 80px 0;
+            background-color: var(--darker);
+        }
+        
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 40px;
+            align-items: center;
+            justify-items: center;
+        }
+        
+        .client-logo {
+            filter: grayscale(100%) brightness(0.8);
+            transition: filter 0.3s ease;
+            max-width: 150px;
+            max-height: 80px;
+        }
+        
+        .client-logo:hover {
+            filter: grayscale(0%) brightness(1);
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background-color: var(--dark);
+        }
+        
+        .contact-content {
+            display: flex;
+            gap: 50px;
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--light);
+        }
+        
+        .contact-info p {
+            margin-bottom: 30px;
+            color: var(--gray);
+        }
+        
+        .contact-details {
+            margin-bottom: 30px;
+        }
+        
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .contact-detail i {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-right: 15px;
+            width: 20px;
+        }
+        
+        .contact-form {
+            flex: 1;
+            background-color: rgba(10, 25, 47, 0.7);
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid rgba(100, 255, 218, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--light);
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(100, 255, 218, 0.1);
+            border-radius: 5px;
+            color: var(--light);
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .submit-btn:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--darker);
+            padding: 50px 0 20px;
+            border-top: 1px solid rgba(100, 255, 218, 0.1);
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--light);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: var(--gray);
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--primary);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .contact-content {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- ...existing code... -->
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">
+                    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png" alt="Bitnoma Tech Logo" style="height:36px;width:36px;margin-right:10px;vertical-align:middle;border-radius:8px;box-shadow:0 2px 8px rgba(26,115,232,0.2);background:#fff;">
+                    Bitnoma<span>Tech</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#services"><i class="fas fa-cogs"></i> Services</a></li>
+                    <li><a href="#about"><i class="fas fa-users"></i> About</a></li>
+                    <li><a href="#clients"><i class="fas fa-handshake"></i> Clients</a></li>
+                    <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+                <div class="header-actions" style="display:flex;align-items:center;gap:18px;">
+                    <a href="#contact" class="btn btn-primary" style="padding:8px 18px;font-size:15px;">Request a Demo</a>
+                    <button class="mobile-menu-btn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+            <!-- <div class="header-info-bar" style="margin-top:18px;display:flex;justify-content:space-between;align-items:center;gap:20px;font-size:0.98rem;color:var(--gray);background:rgba(26,115,232,0.07);border-radius:8px;padding:8px 18px;">
+                <div>
+                    <i class="fas fa-star" style="color:var(--primary);margin-right:6px;"></i>
+                    <strong>2025 Pro Version</strong> – Modern Software & App Development
+                </div>
+                <div style="display:flex;align-items:center;gap:12px;">
+                    <span><i class="fas fa-phone-alt" style="color:var(--primary);margin-right:4px;"></i> +1 (555) 123-4567</span>
+                    <span><i class="fas fa-envelope" style="color:var(--primary);margin-right:4px;"></i> info@bitnomatech.com</span>
+                </div> -->
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" style="position:relative;overflow:hidden;">
+        <!-- Decorative SVG background shapes -->
+        <svg style="position:absolute;top:-80px;left:-120px;z-index:0;opacity:0.25;" width="600" height="600" viewBox="0 0 600 600" fill="none">
+            <circle cx="300" cy="300" r="300" fill="#1a73e8"/>
+        </svg>
+        <svg style="position:absolute;bottom:-120px;right:-100px;z-index:0;opacity:0.18;" width="400" height="400" viewBox="0 0 400 400" fill="none">
+            <ellipse cx="200" cy="200" rx="200" ry="180" fill="#00c4cc"/>
+        </svg>
+        <div class="container" style="position:relative;z-index:1;">
+            <div class="hero-content">
+                <h1>
+                    <span style="display:inline-block;animation:fadeInDown 1s cubic-bezier(.77,0,.18,1) 0.1s both;">Build. Launch. <span>Innovate.</span></span>
+                </h1>
+                <p style="font-size:1.35rem;max-width:600px;animation:fadeInUp 1.2s cubic-bezier(.77,0,.18,1) 0.3s both;">
+                    Bitnoma Tech crafts next-generation <strong>software</strong> and <strong>mobile apps</strong> for startups, enterprises, and visionaries. 
+                    <br>
+                    <span style="color:var(--primary);font-weight:600;">From idea to launch</span>, we turn your concepts into beautiful, scalable, and intelligent digital products.
+                </p>
+                <ul style="display:flex;flex-wrap:wrap;gap:22px;margin:32px 0 38px 0;list-style:none;padding:0;">
+                    <li style="background:rgba(26,115,232,0.09);padding:10px 22px;border-radius:24px;display:flex;align-items:center;gap:10px;font-size:1.05rem;">
+                        <i class="fas fa-mobile-alt" style="color:var(--primary);"></i> Mobile & Web Apps
+                    </li>
+                    <li style="background:rgba(0,196,204,0.09);padding:10px 22px;border-radius:24px;display:flex;align-items:center;gap:10px;font-size:1.05rem;">
+                        <i class="fas fa-brain" style="color:var(--secondary);"></i> AI Integration
+                    </li>
+                    <li style="background:rgba(255,255,255,0.07);padding:10px 22px;border-radius:24px;display:flex;align-items:center;gap:10px;font-size:1.05rem;">
+                        <i class="fas fa-cloud" style="color:var(--primary);"></i> Cloud Solutions
+                    </li>
+                    <li style="background:rgba(26,115,232,0.07);padding:10px 22px;border-radius:24px;display:flex;align-items:center;gap:10px;font-size:1.05rem;">
+                        <i class="fas fa-palette" style="color:var(--primary);"></i> UI/UX Excellence
+                    </li>
+                </ul>
+                <div class="cta-buttons" style="animation:fadeInUp 1.3s cubic-bezier(.77,0,.18,1) 0.5s both;">
+                    <a href="#contact" class="btn btn-primary" style="font-size:1.1rem;">
+                        <i class="fas fa-rocket" style="margin-right:8px;"></i> Start Your Project
+                    </a>
+                    <a href="#services" class="btn btn-outline" style="font-size:1.1rem;">
+                        <i class="fas fa-lightbulb" style="margin-right:8px;"></i> Explore Services
+                    </a>
+                </div>
+                <div style="margin-top:38px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;">
+                    <span style="color:var(--gray);font-size:1rem;">
+                        <i class="fas fa-award" style="color:var(--primary);margin-right:6px;"></i>
+                        <strong>2025 Pro Version</strong> – Modern, Fast, Secure
+                    </span>
+                    <span style="color:var(--gray);font-size:1rem;">
+                        <i class="fas fa-star" style="color:gold;margin-right:6px;"></i>
+                        Rated <strong>5.0</strong> by 100+ clients
+                    </span>
+                </div>
+            </div>
+        </div>
+        <!-- Optional: Hero illustration image for extra visual appeal -->
+        <img src="https://assets-global.website-files.com/5f6b7190899c3e1c9b8e7b7d/63e3e7b1e7e7e7e7e7e7e7e7_hero-apps.svg" alt="App Development Illustration" style="position:absolute;right:5%;bottom:0;width:420px;max-width:48vw;z-index:0;opacity:0.95;pointer-events:none;display:none;" id="hero-illustration">
+        <script>
+            // Show illustration on large screens only
+            window.addEventListener('DOMContentLoaded', function() {
+                var img = document.getElementById('hero-illustration');
+                if(window.innerWidth > 900) img.style.display = 'block';
+            });
+        </script>
+        <style>
+            @keyframes fadeInDown {
+                from { opacity: 0; transform: translateY(-40px);}
+                to { opacity: 1; transform: translateY(0);}
+            }
+            @keyframes fadeInUp {
+                from { opacity: 0; transform: translateY(40px);}
+                to { opacity: 1; transform: translateY(0);}
+            }
+        </style>
+    </section>
+<!-- ...existing code... -->
+
+<!-- ...existing code... -->
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Software & App Development Services</h2>
+                <p>
+                    Transform your ideas into powerful digital products. Bitnoma Tech delivers <span style="color:var(--primary);font-weight:600;">end-to-end software solutions</span> with a focus on innovation, scalability, and user experience.
+                </p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" style="background:linear-gradient(135deg,#1a73e8 0%,#00c4cc 100%,rgba(10,25,47,0.7) 100%);color:#fff;box-shadow:0 8px 32px rgba(26,115,232,0.12);">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile App Development</h3>
+                    <p style="color:#e6f1ff;">
+                        Native & cross-platform apps for iOS and Android. We build seamless, high-performance mobile experiences that delight users and drive growth.
+                    </p>
+                    <ul style="margin-bottom:18px;">
+                        <li style="margin-bottom:6px;"><i class="fas fa-check-circle" style="color:#fff;margin-right:7px;"></i>Flutter, React Native, Swift, Kotlin</li>
+                        <li><i class="fas fa-check-circle" style="color:#fff;margin-right:7px;"></i>App Store & Play Store Launch</li>
+                    </ul>
+                    <a href="#" style="color:#fff;font-weight:600;">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card" style="background:linear-gradient(135deg,#00c4cc 0%,#1a73e8 100%,rgba(10,25,47,0.7) 100%);color:#fff;box-shadow:0 8px 32px rgba(0,196,204,0.12);">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Web Application Development</h3>
+                    <p style="color:#e6f1ff;">
+                        Modern, responsive web apps using the latest frameworks. From MVPs to enterprise platforms, we deliver robust, scalable solutions.
+                    </p>
+                    <ul style="margin-bottom:18px;">
+                        <li style="margin-bottom:6px;"><i class="fas fa-check-circle" style="color:#fff;margin-right:7px;"></i>React, Angular, Vue, Next.js</li>
+                        <li><i class="fas fa-check-circle" style="color:#fff;margin-right:7px;"></i>Progressive Web Apps (PWAs)</li>
+                    </ul>
+                    <a href="#" style="color:#fff;font-weight:600;">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card" style="background:linear-gradient(135deg,#1a73e8 0%,#0a192f 100%,rgba(10,25,47,0.7) 100%);color:#fff;box-shadow:0 8px 32px rgba(26,115,232,0.10);">
+                    <div class="service-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>AI & Automation Solutions</h3>
+                    <p>
+                        Integrate AI, machine learning, and automation to supercharge your business. We create smart apps that learn, adapt, and automate.
+                    </p>
+                    <ul style="margin-bottom:18px;">
+                        <li style="margin-bottom:6px;"><i class="fas fa-check-circle" style="color:#fff;margin-right:7px;"></i>Chatbots & Virtual Assistants</li>
+                        <li><i class="fas fa-check-circle" style="color:#fff;margin-right:7px;"></i>Predictive Analytics</li>
+                    </ul>
+                    <a href="#" style="color:#fff;font-weight:600;">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card" style="background:linear-gradient(135deg,#00c4cc 0%,#0a192f 100%,rgba(10,25,47,0.7) 100%);color:#fff;box-shadow:0 8px 32px rgba(0,196,204,0.10);">
+                    <div class="service-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Cloud & SaaS Development</h3>
+                    <p style="color:#e6f1ff;">
+                        Build, deploy, and scale on the cloud. We architect secure, cost-effective SaaS platforms and cloud-native applications.
+                    </p>
+                    <ul style="margin-bottom:18px;">
+                        <li style="margin-bottom:6px;"><i class="fas fa-check-circle" style="color:#fff;margin-right:7px;"></i>AWS, Azure, Google Cloud</li>
+                        <li><i class="fas fa-check-circle" style="color:#fff;margin-right:7px;"></i>API & Microservices</li>
+                    </ul>
+                    <a href="#" style="color:#fff;font-weight:600;">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card" style="background:linear-gradient(135deg,#1a73e8 0%,#00c4cc 100%,rgba(10,25,47,0.7) 100%);color:#fff;box-shadow:0 8px 32px rgba(26,115,232,0.08);">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>UI/UX Design & Prototyping</h3>
+                    <p style="color:#e6f1ff;">
+                        Beautiful, intuitive interfaces that engage users. We design wireframes, prototypes, and pixel-perfect UIs for web and mobile.
+                    </p>
+                    <ul style="margin-bottom:18px;">
+                        <li style="margin-bottom:6px;"><i class="fas fa-check-circle" style="color:#fff;margin-right:7px;"></i>Figma, Adobe XD, Sketch</li>
+                        <li><i class="fas fa-check-circle" style="color:#fff;margin-right:7px;"></i>User Testing & Research</li>
+                    </ul>
+                    <a href="#" style="color:#fff;font-weight:600;">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card" style="background:linear-gradient(135deg,#00c4cc 0%,#1a73e8 100%,rgba(10,25,47,0.7) 100%);color:#fff;box-shadow:0 8px 32px rgba(0,196,204,0.08);">
+                    <div class="service-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Product Support & Maintenance</h3>
+                    <p style="color:#e6f1ff;">
+                        Keep your apps running smoothly. We offer ongoing support, updates, and performance monitoring for all your digital products.
+                    </p>
+                    <ul style="margin-bottom:18px;">
+                        <li style="margin-bottom:6px;"><i class="fas fa-check-circle" style="color:#fff;margin-right:7px;"></i>24/7 Support</li>
+                        <li><i class="fas fa-check-circle" style="color:#fff;margin-right:7px;"></i>Performance Optimization</li>
+                    </ul>
+                    <a href="#" style="color:#fff;font-weight:600;">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div style="text-align:center;margin-top:48px;">
+                <a href="#contact" class="btn btn-primary" style="font-size:1.15rem;padding:14px 38px;">
+                    <i class="fas fa-rocket" style="margin-right:10px;"></i>Start Your Project with Bitnoma Tech
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80" alt="Bitnoma Tech Team">
+                </div>
+                <div class="about-text">
+                    <h2>About <span style="color:var(--primary)">Bitnoma Tech</span></h2>
+                    <p>
+                        <strong>Founded in July 2025</strong>, Bitnoma Tech is a next-generation software and app development company. We empower businesses and individuals with innovative, scalable, and secure digital solutions for a rapidly evolving world.
+                    </p>
+                    <p>
+                        Our passionate team of developers, designers, and strategists leverages the latest technologies to deliver exceptional web, mobile, and cloud-based applications. We believe in building not just software, but digital experiences that drive growth and transformation.
+                    </p>
+                    <ul>
+                        <li>Custom Web & Mobile App Development</li>
+                        <li>UI/UX Design & Prototyping</li>
+                        <li>Cloud Integration & SaaS Solutions</li>
+                        <li>AI-Powered Applications</li>
+                        <li>Agile Project Management</li>
+                        <li>Dedicated Support & Maintenance</li>
+                    </ul>
+                    <div style="display: flex; gap: 15px; margin-bottom: 20px;">
+                        <div style="background:rgba(26,115,232,0.1);padding:15px 20px;border-radius:8px;display:flex;align-items:center;gap:10px;">
+                            <i class="fas fa-users" style="color:var(--primary);font-size:1.5rem;"></i>
+                            <span><strong>50+</strong> Expert Team Members</span>
+                        </div>
+                        <div style="background:rgba(0,196,204,0.1);padding:15px 20px;border-radius:8px;display:flex;align-items:center;gap:10px;">
+                            <i class="fas fa-rocket" style="color:var(--secondary);font-size:1.5rem;"></i>
+                            <span><strong>100+</strong> Projects Delivered</span>
+                        </div>
+                    </div>
+                    <a href="#contact" class="btn btn-primary">Let's Build Your Next App</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<!-- ...existing code... -->
+    <!-- Clients Section -->
+    <section class="clients" id="clients" style="position:relative;overflow:hidden;">
+        <!-- Decorative SVG background for extra visual appeal -->
+        <svg style="position:absolute;top:-60px;left:-80px;z-index:0;opacity:0.13;" width="500" height="500" viewBox="0 0 500 500" fill="none">
+            <circle cx="250" cy="250" r="250" fill="#1a73e8"/>
+        </svg>
+        <svg style="position:absolute;bottom:-80px;right:-60px;z-index:0;opacity:0.10;" width="320" height="320" viewBox="0 0 320 320" fill="none">
+            <ellipse cx="160" cy="160" rx="160" ry="140" fill="#00c4cc"/>
+        </svg>
+        <div class="container" style="position:relative;z-index:1;">
+            <div class="section-title">
+                <h2>
+                    <span style="color:var(--primary);"><i class="fas fa-handshake"></i></span>
+                    Trusted By Industry Leaders
+                </h2>
+                <p>
+                    We’re proud to collaborate with forward-thinking brands, startups, and enterprises worldwide.<br>
+                    <span style="color:var(--primary);font-weight:600;">Bitnoma Tech</span> delivers digital excellence for every client, every time.
+                </p>
+            </div>
+            <div class="clients-grid" style="margin-bottom:38px;">
+                <div style="background:rgba(26,115,232,0.07);border-radius:14px;padding:28px 18px;display:flex;flex-direction:column;align-items:center;box-shadow:0 4px 18px rgba(26,115,232,0.07);transition:transform 0.3s;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft" class="client-logo" style="max-width:120px;">
+                    <span style="margin-top:14px;color:var(--gray);font-size:1.05rem;">Microsoft</span>
+                </div>
+                <div style="background:rgba(0,196,204,0.07);border-radius:14px;padding:28px 18px;display:flex;flex-direction:column;align-items:center;box-shadow:0 4px 18px rgba(0,196,204,0.07);transition:transform 0.3s;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM" class="client-logo" style="max-width:120px;">
+                    <span style="margin-top:14px;color:var(--gray);font-size:1.05rem;">IBM</span>
+                </div>
+                <div style="background:rgba(255,255,255,0.07);border-radius:14px;padding:28px 18px;display:flex;flex-direction:column;align-items:center;box-shadow:0 4px 18px rgba(0,0,0,0.07);transition:transform 0.3s;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" class="client-logo" style="max-width:120px;">
+                    <span style="margin-top:14px;color:var(--gray);font-size:1.05rem;">Google</span>
+                </div>
+                <div style="background:rgba(26,115,232,0.07);border-radius:14px;padding:28px 18px;display:flex;flex-direction:column;align-items:center;box-shadow:0 4px 18px rgba(26,115,232,0.07);transition:transform 0.3s;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix" class="client-logo" style="max-width:120px;">
+                    <span style="margin-top:14px;color:var(--gray);font-size:1.05rem;">Netflix</span>
+                </div>
+                <div style="background:rgba(0,196,204,0.07);border-radius:14px;padding:28px 18px;display:flex;flex-direction:column;align-items:center;box-shadow:0 4px 18px rgba(0,196,204,0.07);transition:transform 0.3s;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Spotify_logo_without_text.svg" alt="Spotify" class="client-logo" style="max-width:80px;">
+                    <span style="margin-top:14px;color:var(--gray);font-size:1.05rem;">Spotify</span>
+                </div>
+                <div style="background:rgba(255,255,255,0.07);border-radius:14px;padding:28px 18px;display:flex;flex-direction:column;align-items:center;box-shadow:0 4px 18px rgba(0,0,0,0.07);transition:transform 0.3s;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" class="client-logo" style="max-width:120px;">
+                    <span style="margin-top:14px;color:var(--gray);font-size:1.05rem;">Amazon</span>
+                </div>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:32px;justify-content:center;margin-bottom:24px;">
+                <div style="background:rgba(26,115,232,0.09);border-radius:10px;padding:18px 28px;min-width:220px;display:flex;align-items:center;gap:14px;">
+                    <i class="fas fa-trophy" style="color:var(--primary);font-size:1.6rem;"></i>
+                    <div>
+                        <span style="font-size:1.25rem;font-weight:700;color:var(--light);">100+</span>
+                        <div style="color:var(--gray);font-size:0.98rem;">Successful Projects</div>
+                    </div>
+                </div>
+                <div style="background:rgba(0,196,204,0.09);border-radius:10px;padding:18px 28px;min-width:220px;display:flex;align-items:center;gap:14px;">
+                    <i class="fas fa-globe" style="color:var(--secondary);font-size:1.6rem;"></i>
+                    <div>
+                        <span style="font-size:1.25rem;font-weight:700;color:var(--light);">15+</span>
+                        <div style="color:var(--gray);font-size:0.98rem;">Countries Served</div>
+                    </div>
+                </div>
+                <div style="background:rgba(255,255,255,0.09);border-radius:10px;padding:18px 28px;min-width:220px;display:flex;align-items:center;gap:14px;">
+                    <i class="fas fa-star" style="color:gold;font-size:1.6rem;"></i>
+                    <div>
+                        <span style="font-size:1.25rem;font-weight:700;color:var(--light);">5.0</span>
+                        <div style="color:var(--gray);font-size:0.98rem;">Client Rating</div>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align:center;">
+                <blockquote style="font-size:1.18rem;color:var(--gray);background:rgba(26,115,232,0.06);border-left:4px solid var(--primary);padding:22px 32px;border-radius:10px;max-width:700px;margin:0 auto;">
+                    <i class="fas fa-quote-left" style="color:var(--primary);margin-right:8px;"></i>
+                    <span>
+                        “Bitnoma Tech delivered our app ahead of schedule with flawless execution. Their team’s creativity and technical expertise are unmatched.”
+                    </span>
+                    <br>
+                    <span style="display:block;margin-top:10px;color:var(--primary);font-weight:600;">— Product Manager, Leading Tech Startup</span>
+                </blockquote>
+            </div>
+        </div>
+
+<!-- ...existing code... -->
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get In Touch</h2>
+                <p>
+                    Ready to build your next big idea? <span style="color:var(--primary);font-weight:600;">Let’s create something amazing together.</span> Reach out for a free consultation or just say hello!
+                </p>
+            </div>
+            <div class="contact-content" style="align-items: flex-start;">
+                <!-- Contact Info Card -->
+                <div class="contact-info" style="background:linear-gradient(135deg,#1a73e8 0%,#00c4cc 100%);border-radius:16px;padding:38px 32px;box-shadow:0 8px 32px rgba(26,115,232,0.10);color:#fff;position:relative;overflow:hidden;">
+                    <div style="position:absolute;top:-40px;right:-40px;opacity:0.13;z-index:0;">
+                        <svg width="160" height="160"><circle cx="80" cy="80" r="80" fill="#fff"/></svg>
+                    </div>
+                    <h3 style="font-size:2rem;margin-bottom:18px;color:#fff;">
+                        <i class="fas fa-comments" style="color:#fff;margin-right:10px;"></i>
+                        Let’s Talk Apps & Innovation
+                    </h3>
+                    <p style="color:#e6f1ff;margin-bottom:28px;">
+                        Our team is excited to hear about your project, answer your questions, and help you take the next step in digital transformation.
+                    </p>
+                    <div class="contact-details" style="margin-bottom:28px;">
+                        <div class="contact-detail" style="color:#fff;">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>123 Innovation Ave, Tech City, CA 94107</span>
+                        </div>
+                        <div class="contact-detail" style="color:#fff;">
+                            <i class="fas fa-phone-alt"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </div>
+                        <div class="contact-detail" style="color:#fff;">
+                            <i class="fas fa-envelope"></i>
+                            <span>hello@bitnomatech.com</span>
+                        </div>
+                    </div>
+                    <div style="margin-bottom:18px;">
+                        <span style="display:inline-block;background:rgba(255,255,255,0.13);padding:8px 18px;border-radius:18px;font-size:1rem;margin-right:8px;">
+                            <i class="fas fa-clock" style="margin-right:6px;"></i> Mon–Fri: 9am–7pm
+                        </span>
+                        <span style="display:inline-block;background:rgba(255,255,255,0.13);padding:8px 18px;border-radius:18px;font-size:1rem;">
+                            <i class="fas fa-globe" style="margin-right:6px;"></i> Worldwide Service
+                        </span>
+                    </div>
+                    <div class="social-links" style="margin-top:18px;">
+                        <a href="#" title="Twitter" style="background:rgba(255,255,255,0.13);color:#fff;"><i class="fab fa-twitter"></i></a>
+                        <a href="#" title="LinkedIn" style="background:rgba(255,255,255,0.13);color:#fff;"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" title="GitHub" style="background:rgba(255,255,255,0.13);color:#fff;"><i class="fab fa-github"></i></a>
+                        <a href="#" title="Instagram" style="background:rgba(255,255,255,0.13);color:#fff;"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <!-- Contact Form Card -->
+                <div class="contact-form" style="background:rgba(10,25,47,0.92);border-radius:16px;box-shadow:0 8px 32px rgba(26,115,232,0.10);position:relative;z-index:1;">
+                    <form>
+                        <div style="display:flex;gap:18px;">
+                            <div class="form-group" style="flex:1;">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" required placeholder="Your Name">
+                            </div>
+                            <div class="form-group" style="flex:1;">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required placeholder="you@email.com">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Company / Startup (optional)</label>
+                            <input type="text" id="company" name="company" placeholder="Company Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="project-type">Project Type</label>
+                            <select id="project-type" name="project-type" style="width:100%;padding:12px 15px;background-color:rgba(255,255,255,0.05);border:1px solid rgba(100,255,218,0.1);border-radius:5px;color:var(--light);font-size:1rem;">
+                                <option value="">Select...</option>
+                                <option>Mobile App</option>
+                                <option>Web Application</option>
+                                <option>AI/Automation</option>
+                                <option>UI/UX Design</option>
+                                <option>Cloud/SaaS</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">How Can We Help?</label>
+                            <textarea id="message" name="message" required placeholder="Tell us about your project, idea, or question..."></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn" style="width:100%;font-size:1.1rem;">
+                            <i class="fas fa-paper-plane" style="margin-right:8px;"></i>Send Message
+                        </button>
+                        <div style="margin-top:18px;text-align:center;color:var(--gray);font-size:0.98rem;">
+                            <i class="fas fa-lock" style="color:var(--primary);margin-right:6px;"></i>
+                            Your info is safe & confidential.
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- Decorative floating shapes -->
+            <svg style="position:absolute;left:0;bottom:-80px;z-index:0;opacity:0.12;" width="220" height="220" viewBox="0 0 220 220" fill="none">
+                <ellipse cx="110" cy="110" rx="110" ry="90" fill="#1a73e8"/>
+            </svg>
+            <svg style="position:absolute;right:0;top:-60px;z-index:0;opacity:0.10;" width="140" height="140" viewBox="0 0 140 140" fill="none">
+                <circle cx="70" cy="70" r="70" fill="#00c4cc"/>
+            </svg>
+        </div>
+    </section>
+<!--
+
+    <!-- Footer -->
+<!-- ...existing code... -->
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content" style="display: flex; flex-wrap: wrap; gap: 50px; margin-bottom: 40px; position: relative;">
+                <!-- Company Info -->
+                <div class="footer-column" style="flex: 1; min-width: 260px;">
+                    <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;">
+                        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png" alt="Bitnoma Tech Logo" style="height:38px;width:38px;border-radius:8px;box-shadow:0 2px 8px rgba(26,115,232,0.2);background:#fff;">
+                        <span style="font-size:1.35rem;font-weight:700;color:var(--light);">Bitnoma<span style="color:var(--primary);">Tech</span></span>
+                    </div>
+                    <p style="color:var(--gray);margin-bottom:18px;">
+                        Building the future of <strong>software</strong> and <strong>apps</strong>.<br>
+                        <span style="color:var(--primary);font-weight:600;">Innovate. Launch. Grow.</span>
+                    </p>
+                    <div style="margin-bottom:18px;">
+                        <span style="display:inline-block;background:rgba(26,115,232,0.09);padding:7px 16px;border-radius:16px;font-size:0.98rem;color:var(--primary);margin-right:8px;">
+                            <i class="fas fa-rocket"></i> 2025 Pro Version
+                        </span>
+                        <span style="display:inline-block;background:rgba(0,196,204,0.09);padding:7px 16px;border-radius:16px;font-size:0.98rem;color:var(--secondary);">
+                            <i class="fas fa-globe"></i> Global Service
+                        </span>
+                    </div>
+                    <div class="social-links" style="margin-top:10px;">
+                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <!-- Services -->
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#services">Mobile App Development</a></li>
+                        <li><a href="#services">Web Application Development</a></li>
+                        <li><a href="#services">AI & Automation</a></li>
+                        <li><a href="#services">Cloud & SaaS</a></li>
+                        <li><a href="#services">UI/UX Design</a></li>
+                        <li><a href="#services">Product Support</a></li>
+                    </ul>
+                </div>
+                <!-- Quick Links -->
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#clients">Clients</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <!-- Contact & Newsletter -->
+                <div class="footer-column">
+                    <h3>Stay Connected</h3>
+                    <p style="color:var(--gray);margin-bottom:12px;">Subscribe for updates, tips, and exclusive offers.</p>
+                    <form style="display:flex;gap:8px;margin-bottom:14px;">
+                        <input type="email" placeholder="Your email" style="flex:1;padding:10px 14px;border-radius:5px;border:none;background:rgba(255,255,255,0.08);color:var(--light);font-size:1rem;">
+                        <button type="submit" style="background:var(--primary);color:#fff;border:none;padding:10px 18px;border-radius:5px;font-weight:600;cursor:pointer;transition:background 0.2s;">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                    <div style="color:var(--gray);font-size:0.97rem;">
+                        <i class="fas fa-map-marker-alt" style="color:var(--primary);margin-right:6px;"></i> 123 Innovation Ave, Tech City, CA
+                    </div>
+                    <div style="color:var(--gray);font-size:0.97rem;margin-top:6px;">
+                        <i class="fas fa-envelope" style="color:var(--primary);margin-right:6px;"></i> hello@bitnomatech.com
+                    </div>
+                </div>
+                <!-- Decorative SVG -->
+                <svg style="position:absolute;bottom:-60px;right:-60px;z-index:0;opacity:0.10;" width="180" height="180" viewBox="0 0 180 180" fill="none">
+                    <ellipse cx="90" cy="90" rx="90" ry="75" fill="#1a73e8"/>
+                </svg>
+            </div>
+            <div class="copyright" style="text-align:center;padding-top:20px;border-top:1px solid rgba(255,255,255,0.1);color:var(--gray);font-size:0.98rem;">
+                <span>
+                    &copy; 2025 Bitnoma Tech. All rights reserved.
+                    &nbsp;|&nbsp;
+                    <a href="#" style="color:var(--primary);">Privacy Policy</a>
+                    &nbsp;|&nbsp;
+                    <a href="#" style="color:var(--primary);">Terms of Service</a>
+                </span>
+                <br>
+                <span style="font-size:0.93rem;color:var(--gray);">
+                    <i class="fas fa-award" style="color:var(--primary);margin-right:5px;"></i>
+                    Crafted with passion by the Bitnoma Tech team.
+                </span>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (window.innerWidth <= 768) {
+                        navLinks.style.display = 'none';
+                    }
+                }
+            });
+        });
+        
+        // Sticky header on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
